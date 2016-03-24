@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+{% load static from staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'calendar_style.css' %}">
+
+</head>
+<body>
+<h1>{{Y}} {{M}}</h1>
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+    	<th bgcolor="red">Sun</th>
+      	<th>Mon</th>
+      	<th>Tue</th>
+      	<th>Wed</th>
+      	<th>Thu</th>
+      	<th>Fri</th>
+      	<th bgcolor="blue">Sat</th>
+    </tr>
+    
+    {% for week in cal %}
+    	<tr>
+    	{% for day in week %}
+    		{% if day == -1 %}
+    			<th></th>
+    		{% endif %}
+    		{% if day != -1 %}
+    			<th>{{day}}</th>
+    		{% endif %}
+    	{% endfor %}
+    	</tr>
+    {% endfor %}
+    
+  </table>
+</div>
+
+</body>
+</html>

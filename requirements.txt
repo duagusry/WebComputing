@@ -1,0 +1,4 @@
+Django==1.9.4
+gunicorn==19.4.5
+virtualenv==15.0.1
+whitenoise==3.0
